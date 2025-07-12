@@ -1,9 +1,9 @@
-package ControllerFiles;
+package com.webchipherapp.demo.ControllerFiles;
 
-import DataTransferObjects.CipherRequestDTO;
-import DataTransferObjects.CipherResultDTO;
+import com.webchipherapp.demo.DataTransferObjects.CipherRequestDTO;
 
-import Model.CipherManager;
+import com.webchipherapp.demo.DataTransferObjects.CipherResultDTO;
+import com.webchipherapp.demo.Model.CipherManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 @CrossOrigin
 public class APIController {
+    public static void main(String[] args) {
+        APIController a = new APIController(new CipherManager());
+        System.out.println(a.processVigenerCipherEncryptionRequest(new CipherRequestDTO("qwery", "key")));
+    }
+
     private final CipherManager model;
 
     @Autowired
@@ -20,13 +25,23 @@ public class APIController {
     }
 
     @PostMapping("/processVigenerCipherEncryptionRequest")
-    public String processVigenerCipherEncryptionRequest(@RequestBody CipherRequestDTO request) {
-        return model.handleVigenerCipherEncryptionRequest(request).toString();
+    public CipherResultDTO processVigenerCipherEncryptionRequest(@RequestBody CipherRequestDTO request) {
+        return model.handleVigenerCipherEncryptionRequest(request);
     }
 
     @PostMapping("/processVigenerCipherDecryptionRequest")
-    public String processVigenerCipherDecryptionRequest(@RequestBody CipherRequestDTO request) {
-        return model.handleVigenerCipherDecryptionRequest(request).toString();
+    public CipherResultDTO processVigenerCipherDecryptionRequest(@RequestBody CipherRequestDTO request) {
+        return model.handleVigenerCipherDecryptionRequest(request);
     }
 
+
+    @PostMapping("/test")
+    public String testEndpoint(@RequestBody String rawBody) {
+        return "Received raw body: " + rawBody;
+    }
+
+    @GetMapping("/test")
+    public String testGet() {
+        return "GET работает!";
+    }
 }
