@@ -12,10 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 @CrossOrigin
 public class APIController {
-    public static void main(String[] args) {
-        APIController a = new APIController(new CipherManager());
-        System.out.println(a.processVigenerCipherEncryptionRequest(new CipherRequestDTO("qwery", "key")));
-    }
+
 
     private final CipherManager model;
 
