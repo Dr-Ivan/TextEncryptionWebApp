@@ -7,7 +7,7 @@ async function encrypt() {
     inputKey = key.value;
     
     try {
-        const response = await fetch('http://localhost:8080/api/processVigenerCipherEncryptionRequest', {
+        const response = await fetch('https://derevyanko.braverto.com/api/processVigenerCipherEncryptionRequest', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ async function decrypt() {
     inputKey = key.value;
     
     try {
-        const response = await fetch('http://localhost:8080/api/processVigenerCipherDecryptionRequest', {
+        const response = await fetch('https://derevyanko.braverto.com/api/processVigenerCipherDecryptionRequest', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
