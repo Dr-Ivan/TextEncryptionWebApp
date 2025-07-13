@@ -21,7 +21,7 @@ async function encrypt() {
         if (!response.ok) throw new Error('Ошибка сервера');
         
         const result = await response.text();
-        alert(result);
+        //alert(result);
         res.value = JSON.parse(result).text;
 
     } catch (error) {
@@ -52,7 +52,7 @@ async function decrypt() {
         if (!response.ok) throw new Error('Ошибка сервера');
         
         const result = await response.text();
-        alert(result);
+        //alert(result);
         res.value = JSON.parse(result).text;
 
     } catch (error) {
