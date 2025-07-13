@@ -2,14 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigenère Cipher Translator</title>
+    <link rel="stylesheet" href="stylesForIndex.css">
 </head>
-    <input type="text" id="inp1" placeholder="TEXT" />
-    <input type="text" id="inp2" placeholder="KEY" />
-    <input type="text" id="res" placeholder="RESULT" readonly />
-    <button onclick="encrypt()">encrypt</button>
-    <button onclick="decrypt()">decrypt</button>
-    <button onclick="clearResult()">clear result</button>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Vigenère Cipher Translator</h1>
+            <p>Encrypt and decrypt text using the Vigenère cipher method</p>
+        </div>
+        
+        <div class="input-group">
+            <div class="input-row">
+                <div class="input-field">
+                    <label for="inp1">Text to encrypt/decrypt</label>
+                    <input type="text" id="inp1" placeholder="Enter your text here">
+                </div>
+                
+                <div class="input-field">
+                    <label for="inp2">Secret Key</label>
+                    <input type="text" id="inp2" placeholder="Enter encryption key">
+                </div>
+            </div>
+            
+            <div class="input-field">
+                <label for="res">Result</label>
+                <input type="text" id="res" class="result-field" placeholder="Result will appear here" readonly>
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <button class="btn btn-primary encrypt" onclick="encrypt()">Encrypt</button>
+            <button class="btn btn-primary decrypt" onclick="decrypt()">Decrypt</button>
+            <button class="btn btn-secondary clear" onclick="clearResult()">Clear Result</button>
+        </div>
+        
+        <div class="footer">
+            <p>Secure text transformation using Vigenère cipher algorithm</p>
+        </div>
+    </div>
 
     <script src="scriptsForIndex.js"></script>
 </body>
