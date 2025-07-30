@@ -8,8 +8,38 @@ import java.util.HashSet;
 public class CaesarCipher implements CipherInterface{
     @Override
     public String encryptText(String text, String key) {
+        if (key.isEmpty()) return "Key must contain at least one digit!";
 
-        return "";
+        int textLen = text.length();
+        int keyLen = key.length();
+        char c;
+        for (int i = 0; i < keyLen; ++i){
+            c = key.charAt(i);
+            if (!Character.isDigit(c)) return "Key must contain only digits!";
+        }
+        int keyInt = Integer.parseInt(key);
+
+        HashSet<Integer> capitalIndexes = new HashSet<>();
+        for (int i = 0; i < textLen; ++i){
+            if (Character.isUpperCase(text.charAt(i))) capitalIndexes.add(i);
+        }
+
+        text = text.toLowerCase();
+        StringBuilder encrypted = new StringBuilder();
+        char code;
+        for (int i = 0; i < textLen; ++i){
+            c = text.charAt(i);
+            if (!Character.isLetter(c)) {
+                code = c;
+            } else {
+                if (c >= 'a' && c <= 'z') code = encodeEnglishLetter(c, keyInt);
+                else if (c >= 'а' && c <= 'я') code = encodeRussianLetter(c, keyInt);
+                else code = c;
+                if (capitalIndexes.contains(i)) code = Character.toUpperCase(code);
+            }
+            encrypted.append(code);
+        }
+        return encrypted.toString();
     }
 
     @Override
