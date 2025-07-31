@@ -10,6 +10,7 @@ public class VigenerCipher implements CipherInterface {
 
     @Override
     public String encryptText(String text, String key){
+        if (key.isEmpty()) return "Key must contain at least one english letter!";
         key = key.toLowerCase();
         int textLen = text.length();
         int keyLen = key.length();
@@ -49,6 +50,7 @@ public class VigenerCipher implements CipherInterface {
 
     @Override
     public String decryptText(String text, String key){
+        if (key.isEmpty()) return "Key must contain at least one english letter!";
         key = key.toLowerCase();
         int textLen = text.length();
         int keyLen = key.length();
