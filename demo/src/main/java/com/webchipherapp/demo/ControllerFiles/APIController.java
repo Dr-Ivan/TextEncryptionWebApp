@@ -31,6 +31,15 @@ public class APIController {
         return model.handleVigenerCipherDecryptionRequest(request);
     }
 
+    @PostMapping("/processCaesarCipherEncryptionRequest")
+    public CipherResultDTO processCaesarCipherEncryptionRequest(@RequestBody CipherRequestDTO request){
+        return model.handleCaesarCipherEncryptionRequest(request);
+    }
+
+    @PostMapping("/processCaesarCipherDecryptionRequest")
+    public CipherResultDTO processCaesarCipherDecryptionRequest(@RequestBody CipherRequestDTO request){
+        return model.handleCaesarCipherDecryptionRequest(request);
+    }
 
     @PostMapping("/test")
     public String testEndpoint(@RequestBody String rawBody) {
