@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Переводчик шифра Цезаря</title>
+    <link rel="stylesheet" href="commonStyles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Переводчик шифра Цезаря</h1>
+            <p>Этот инструмент поможет вам зашифровать или расшифровать текст при помощи шифра Цезаря</p>
+        </div>
+        
+        <div class="input-group">
+            <div class="input-row">
+                <div class="input-field">
+                    <label for="inp1">Текст для шифровки/расшифровки</label>
+                    <input type="text" id="inp1" placeholder="Напишите свой текст здесь">
+                </div>
+                
+                <div class="input-field">
+                    <label for="inp2">Ключ шифра</label>
+                    <input type="text" id="inp2" placeholder="Введите число-ключ шифрования">
+                </div>
+            </div>
+            
+            <div class="input-field">
+                <label for="res">Результат</label>
+                <input type="text" id="res" class="result-field" placeholder="Результат появится здесь" readonly>
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <button class="btn btn-primary encrypt" onclick="encrypt()">Зашифровать</button>
+            <button class="btn btn-primary decrypt" onclick="decrypt()">Расшифровать</button>
+            <button class="btn btn-secondary clear" onclick="clearResult()">Очистить результат</button>
+        </div>
+        
+        <div class="footer">
+            <p>Защитите текстовую информацию при помощи алгоритмов шифрования</p>
+            <p>Попробуйте также <a href="https://derevyanko.braverto.com/index.html">этот инструмент</a>. Он зашифрует ваш текст более надежным алгоритмом.</p>
+            <p>Можете ознакомиться с профилями авторов на Github: <a href="https://github.com/Dr-Ivan">реализация шифрования</a>, <a href="https://github.com/D-ASA-D">развертывание</a>.</p>
+        </div>
+    </div>
+
+    <script src="scriptsForCaesarCipher.js"></script>
+</body>
+</html>
