@@ -73,13 +73,13 @@ TextEncryptionWebApp - это учебный проект по шифрован�
 `{ "text": "результат" }`
 
 Маршруты:
-    - POST /api/processVigenerCipherEncryptionRequest
-    - POST /api/processVigenerCipherDecryptionRequest
-    - POST /api/processCaesarCipherEncryptionRequest
-    - POST /api/processCaesarCipherDecryptionRequest
-    - тестовые:
-        - GET /api/test → "GET работает!"
-        - POST /api/test → эхо: "Received raw body: ..."
+- POST /api/processVigenerCipherEncryptionRequest
+- POST /api/processVigenerCipherDecryptionRequest
+- POST /api/processCaesarCipherEncryptionRequest
+- POST /api/processCaesarCipherDecryptionRequest
+- тестовые:
+    - GET /api/test → "GET работает!"
+    - POST /api/test → эхо: "Received raw body: ..."
 
 Для теста API можно использовать curl.
 Например: `curl -X POST -H "Content-Type: application/json" -d "{\"text\":\"Test\", \"key\":\"key\"}" http://localhost:8011/api/processVigenerCipherEncryptionRequest`
