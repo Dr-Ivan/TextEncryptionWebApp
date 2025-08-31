@@ -35,31 +35,31 @@ TextEncryptionWebApp - это учебный проект по шифрован�
 
 # Структура проекта
 
-TextEncryptionWebApp/
-└─ demo/
-   ├─ pom.xml
-   └─ src/
-      └─ main/
-         ├─ java/com/webchipherapp/demo/
-         │  ├─ BackendApplication.java
-         │  ├─ ControllerFiles/
-         │  │  └─ APIController.java
-         │  ├─ DataTransferObjects/
-         │  │  ├─ CipherRequestDTO.java   // { text, key }
-         │  │  └─ CipherResultDTO.java    // { text }
-         │  └─ Model/
-         │     ├─ CipherInterface.java
-         │     ├─ CipherManager.java
-         │     ├─ VigenerCipher.java      // английский алфавит
-         │     └─ CaesarCipher.java       // английский и русский алфавиты
-         └─ resources/
-            ├─ application.properties      // настройки (дополнены при развертывании на удаленный сервер)
-            └─ static/
-               ├─ index.html               // Vigenère
-               ├─ CaesarCipher.html        // Caesar
-               ├─ commonStyles.css
-               ├─ scriptsForIndex.js
-               └─ scriptsForCaesarCipher.js
+* **`TextEncryptionWebApp/`**
+    * `demo/`
+    * `pom.xml`
+    * `src/`
+        * `main/`
+            * **`java/com/webchipherapp/demo/`**
+                * `BackendApplication.java`
+                * `ControllerFiles/`
+                    * `APIController.java`
+                * `DataTransferObjects/`
+                    * `CipherRequestDTO.java`   // { text, key }
+                    * `CipherResultDTO.java`    // { text }
+                * `Model/`
+                    * `CipherInterface.java`
+                    * `CipherManager.java`
+                    * `VigenerCipher.java`      // английский алфавит
+                    * `CaesarCipher.java`       // английский и русский алфавиты
+            * **`resources/`**
+                * `application.properties`      // настройки (дополнены при развертывании на удаленный сервер)
+                * `static/`
+                    * `index.html`              // Vigenère
+                    * `CaesarCipher.html`       // Caesar
+                    * `commonStyles.css`
+                    * `scriptsForIndex.js`
+                    * `scriptsForCaesarCipher.js`
 
 
 ## Описание API (REST)
@@ -106,8 +106,8 @@ TextEncryptionWebApp/
 <b>Примечание.</b> В `static/scriptsForIndex.js` и `static/scriptsForCaesarCipher.js` зашит адрес `https://derevyanko.braverto.com/...`.
 Если вы хотите, чтобы локальные страницы отправлялись в локальный бэкенд, поменяйте fetch(...) на один из вариантов ниже.
 
-<b>Вариант 1. </b> `fetch('/api/processCaesarCipherEncryptionRequest', { ... })`
-<b>Вариант 2. </b> `fetch('http://localhost:8011/api/processCaesarCipherEncryptionRequest', { ... })`
+- <b>Вариант 1. </b> `fetch('/api/processCaesarCipherEncryptionRequest', { ... })`
+- <b>Вариант 2. </b> `fetch('http://localhost:8011/api/processCaesarCipherEncryptionRequest', { ... })`
 
 После запуска бэкенда Spring Boot сам отдаёт статические файлы из resources/static. Поэтому для открытия страниц можно перейти по следующим адресам:
  - Vigenère: http://localhost:8011/index.html
